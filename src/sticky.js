@@ -44,8 +44,15 @@ class Sticky {
    * @function
    */
   run() {
-      const elements = document.querySelectorAll(this.selector);
-      this.forEach(elements, (element) => this.renderElement(element));
+    // wait for page to be fully loaded
+    const pageLoaded = setInterval(() => {
+      if (document.readyState === 'interactive') {
+        clearInterval(pageLoaded);
+
+        const elements = document.querySelectorAll(this.selector);
+        this.forEach(elements, (element) => this.renderElement(element));
+      }
+    }, 10);
   }
 
 

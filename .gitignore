@@ -37,8 +37,4 @@ jspm_packages
 .node_repl_history
 
 #Idea
-.idea/copyright/
-.idea/misc.xml
-.idea/modules.xml
-.idea/sticky-js.iml
-.idea/workspace.xml
+.idea/
