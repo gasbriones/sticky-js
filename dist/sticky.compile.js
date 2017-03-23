@@ -53,17 +53,10 @@ var Sticky = function () {
   Sticky.prototype.run = function run() {
     var _this = this;
 
-    // wait for page to be fully loaded
-    var pageLoaded = setInterval(function () {
-      if (document.readyState === 'complete') {
-        clearInterval(pageLoaded);
-
-        var elements = document.querySelectorAll(_this.selector);
-        _this.forEach(elements, function (element) {
-          return _this.renderElement(element);
-        });
-      }
-    }, 10);
+    var elements = document.querySelectorAll(this.selector);
+    this.forEach(elements, function (element) {
+      return _this.renderElement(element);
+    });
   };
 
   /**
